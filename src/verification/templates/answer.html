@@ -1,0 +1,52 @@
+                                            <div class="card answer-box" id="answer_box{{aid+1}}">
+
+                                                <div class="card-header">
+                                                    {% set key = 'candidate_a' + (aid+1)|string %}
+                                                    <b>
+                                                        Answer:
+                                                        <span id="answer_value{{aid+1}}">{{answers[key]}}</span>
+                                                    </b>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div>
+                                                        Is this answer correct?
+                                                    </div>
+                                                    <div class="input-group">
+                                                        {% set prev_judge = judge['answers'][aid] if judge %}
+                                                        <div class="form-check form-check-inline">
+                                                            <input
+                                                                   class="form-check-input"
+                                                                    type="radio"
+                                                                    name="judge_a{{aid+1}}"
+                                                                    id="judge_a{{aid+1}}_true"
+                                                                    value="true"
+                                                                   {% if prev_judge == True %}checked{% endif %}
+                                                                    />
+                                                            <label
+                                                                   class="form-check-label"
+                                                                   for="judge_a{{aid+1}}_true"
+                                                                   >
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input
+                                                                    class="form-check-input"
+                                                                    type="radio"
+                                                                    name="judge_a{{aid+1}}"
+                                                                    id="judge_a{{aid+1}}_false"
+                                                                    value="false"
+                                                                   {% if prev_judge == False %}checked{% endif %}
+                                                                    />
+                                                            <label
+                                                                   class="form-check-label"
+                                                                   for="judge_a{{aid+1}}_false"
+                                                                   >
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <!-- todo: maybe better have box if selected no -->
+                                                    <!-- ummm, maybe not a good idea? not needed? -->
+                                                </div>
+                                            </div>

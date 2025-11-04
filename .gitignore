@@ -1,0 +1,13 @@
+log/
+repos/
+**/.ipynb_checkpoints/
+**/__pycache__/
+data/preprocess/
+data/generation/
+data/verification/
+
+src/verification/static/*
+!src/verification/static/base.js
+!src/verification/static/styles.css
+notebook/
+output/

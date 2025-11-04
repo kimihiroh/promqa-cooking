@@ -1,0 +1,50 @@
+prefix: |
+    ## Instruction ##
+    This is an evaluation task.
+    You will be given a question, gold answer(s), and predicted answer.
+    Your task is to evaluate if the predicted answer matches against the gold answer(s).
+option:
+    binary: |
+        Give your binary judge 0 or 1:
+        * 0 means the predicted answer is wrong (unmatch)
+        * 1 means the predicted answer is correct (match)
+        When multiple gold answers are available (provided as a list), the predicted answer is correct if it matches with at least one of the gold answers.
+
+        Provide your feedback as follows:
+        ## Feedback ##
+        [Rationale] (your rationale for the judge, as a text)
+        [Judge] (your judge, as a number either 0 or 1)
+    ternary: |
+        Give your ternary judge 0, 1, or 2:
+        * 0 means the predicted answer is wrong (unmatch)
+        * 1 means the predicted answer is partially correct/wrong (partial match)
+        * 2 means the predicted answer is correct (match)
+        When multiple gold answers are available (provided as a list), the predicted answer is correct/partially correct if it matches/partially matches with at least one of the gold answers.
+
+        Provide your feedback as follows:
+        ## Feedback ##
+        [Rationale] (your rationale for the judge, as a text)
+        [Judge] (your judge, as a number, 0, 1, or 2)
+note:
+    default: |
+        ## Note ##
+        The question is being asked by a user who is cooking {activity_name}.
+        Well-trained annotators constructed gold answer(s), while the predicted answer was by a machine, which answered based on the corresponding recipe and the frames of the cooking recording.
+    recipe: |
+        Here is the recipe:
+        {recipe}
+    step: |
+        Here are the steps being performed already:
+        {step_information}
+task: |
+    ## Task ##
+    Now, here are the question, gold answer(s), and predicted answer:
+    [Question]
+    {question}
+    [Gold Answer(s)]
+    {gold_answer}
+    [Predicted Answer]
+    {predicted_answer}
+
+    ## Feedback ##
+    [Rationale]

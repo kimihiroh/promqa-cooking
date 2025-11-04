@@ -1,0 +1,108 @@
+prefix: |
+    # Instruction
+    A person is cooking {recipe_name} with their friend, who is a skilled cook.
+recipe:
+    dot: |
+        Here is the recipe information as DOT:
+        {recipe}
+    image:
+        w_video: |
+            The recipe is shown as a graph in one of the images.
+        wo_video: |
+            The recipe is shown as a graph in the image.
+video:
+    w_recipe_image: |
+        Other images are the photos taken during the cooking activity.
+    wo_recipe_image: |
+        The images are photos taken during the cooking activity.
+step: |
+    {step_information}
+target: |
+    {target_information}
+    The person may or may not be noticing this.
+question:
+    next: |
+        What questions would the person ask the friend about next step(s)?
+    missing: |
+        What questions would the person ask the friend about missing step(s)?
+    order: |
+        What questions would the person ask the friend about order mistake(s)?
+    preparation: |
+        What question would the person ask the friend about preparation mistake(s) in this step?
+    measurement: |
+        What question would the person ask the friend about measurement mistake(s) in this step?
+    timing: |
+        What question would the person ask the friend about timing mistake(s) in this step?
+    technique: |
+        What question would the person ask the friend about technique mistake(s) in this step?
+    temperature: |
+        What question would the person ask the friend about temperature mistake(s) in this step?
+constraint: |
+    Assuming the friend is watching over you throughout the cooking activity and understand the situation, return three pairs of a question and its answers as a list:
+    * <question1>
+        * <answer1-1>
+        * <answer1-2>
+        * ...
+    * <question2>
+        * ...
+
+    # Note
+    - Each question/answer should consists of one consice sentence/phrase.
+    - If there exist multiple correct answers, provide all correct answers for each question as a list so that each answer targets at one step.
+    - Each answer targets at one step.
+    - Imagine a variety of a person: beginner/experienced, careless/careful, etc...
+    - It is preferable to have as diverse pairs (question/answer type, tone, wording, etc) as possible.
+    - There is a case where no missing step is performed, i.e., an answer is just no.
+example:
+    next: |
+        # Example
+        * What is the next step?
+            * You have completed all the steps.
+        * What should I do next?
+            * <stepY>.
+            * <stepZ>.
+    missing: |
+        # Example
+        * Did I miss <stepX>?
+            * No, you are on track.
+        * Did I miss anything?
+            * you missed <stepX>.
+            * you missed <stepY>.
+    order: |
+        # Example
+        * Was it wrong to perform <stepX> now?
+            * Yes, you should have done it before <stepY>.
+        * Should I have done <stepZ> before <stepW>?
+            * No, <stepX> should be done after <stepW>.
+    preparation: |
+        # Example
+        * Did I prepare X correctly?
+            * No, you did it wrong.
+        * Shoudl I have done <stepX> instead of <stepY>?
+            * Yes, you should have done <stepX>.
+    measurement: |
+        # Example
+        * Did I measure X correctly?
+            * No, you did it wrong.
+        * Shoudl I have used X to measure Y?
+            * Yes, you should have used X.
+    timing: |
+        # Example
+        * Was it okay to do <stepX> now?
+            * Yes, it was the correct timing.
+        * Did I do <stepX> at the correct timeing?
+            * No, you should have done <stepX> before <stepY>.
+    technique: |
+        # Example
+        * Did I do <stepX> correctly?
+            * No, you did it wrong.
+        * Was <stepX> performed correctly?
+            * Yes, you performed <stepX> correctly.
+    temperature: |
+        # Example
+        * Was the temperature for <stepX> correct?
+            * No, you should have set to Y.
+        * Did I set the temperature for <stepX> correctly?
+            * Yes, you set it correctly.
+suffix: |
+    # Response

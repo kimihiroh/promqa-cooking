@@ -1,0 +1,22 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.6.0
+  hooks:
+  - id: check-json
+  - id: check-yaml
+  - id: check-added-large-files
+    args: ['--maxkb=100000']
+  - id: trailing-whitespace
+    exclude: (^notebooks/)
+  - id: end-of-file-fixer
+  - id: detect-private-key
+  - id: requirements-txt-fixer
+- repo: https://github.com/charliermarsh/ruff-pre-commit
+  rev: v0.4.1
+  hooks:
+    - id: ruff
+    - id: ruff-format
+- repo: https://github.com/shellcheck-py/shellcheck-py
+  rev: v0.10.0.1
+  hooks:
+  - id: shellcheck

@@ -1,0 +1,89 @@
+/*  css for only one item with id  */
+#task-wrapper {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+#task-header {
+    margin-top: 5px;
+}
+#task-body {
+    margin-top: 5px;
+}
+#alert-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#input-box {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#graph-box {
+    margin-right: 5px;
+}
+#video-box {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+#description-box {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+/*  css for multiple items with class  */
+.question-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.answer-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.question-group {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
+.container img {
+    max-width: 100%;
+    height: auto;
+}
+.scrollable-container {
+    max-width: 100%;
+    max-height: 50vh;
+    overflow: auto;
+/*             overflow-y: scroll;  */
+}
+.text-container {
+    max-width: 100%;
+}
+.preserve-whitespace {
+    white-space: pre-wrap;
+}
+.card-video {
+    width: 100%;
+    height: auto;
+}
+
+.comment-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.aligned-content {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.aligned-content .label {
+    min-width: 300px;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.aligned-content .content {
+    flex: 1;
+}
